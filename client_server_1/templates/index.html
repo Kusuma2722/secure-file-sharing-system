@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure File Sharing System</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-color: #000000; /* Black */
+      --secondary-color: #6c757d; /* Gray */
+      --bg-dark: #ffffff; /* White */
+      --card-bg: #111827;
+      --border: #1f2937;
+      --text-main: #000000; /* Black text */
+      --text-muted: #94a3b8;
+      --light-bg: #f8f9fa; /* Light gray */
+      --text-dark: #000000; /* Black text */
+      --muted-text: #6c757d; /* Dark gray */
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--dark-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background-color: var(--dark-bg);
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .navbar-brand {
+      color: #000 !important;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .navbar-nav .nav-link {
+      color: #000 !important;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #6c757d !important;
+    }
+
+    .navbar-nav .nav-link.active {
+      color: var(--primary) !important;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      background: var(--dark-bg);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: auto;
+    }
+
+    /* BUTTON */
+    .btn-primary {
+      background-color: var(--primary);
+      border: none;
+      padding: 12px 28px;
+      font-weight: 600;
+      margin-top: 30px;
+    }
+
+    /* SECTION */
+    section {
+      padding: 80px 0;
+    }
+
+    /* CARD */
+    .card-custom {
+      background-color: var(--light-bg);
+      border: 1px solid #e9ecef;
+      border-radius: 10px;
+      padding: 35px;
+      text-align: center;
+    }
+
+    .card-custom i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: var(--dark-bg);
+      border-top: 1px solid #e9ecef;
+      color: var(--muted-text);
+      text-align: center;
+      padding: 18px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">SecureFile</a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#connect">Connect</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h1>Secure File Sharing System</h1>
+      <p>
+        A decentralized and secure platform for file sharing using blockchain
+        and IPFS with encryption and access control.
+      </p>
+      <a href="#connect" class="btn btn-primary">Get Started</a>
+    </div>
+  </section>
+
+  <!-- CONNECT -->
+  <section id="connect">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Connect to Blockchain</h2>
+        <p class="text-muted">Initialize blockchain network before file operations</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card-custom">
+            <i class="fas fa-link"></i>
+            <h4 class="fw-bold mb-3">Blockchain Connection</h4>
+            <p class="text-muted mb-4">
+              Connect to blockchain to enable secure file upload and download.
+            </p>
+            <a href="{{ url_for('connect_blockchain') }}" class="btn btn-primary">
+              Connect Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card-custom">
+            <h2 class="fw-bold mb-4">About the System</h2>
+            <p class="text-muted">
+              This system uses AES encryption to secure files before storing them
+              on IPFS. Blockchain technology ensures tamper-proof records and
+              controlled access through smart contracts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    Secure File Sharing System
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
